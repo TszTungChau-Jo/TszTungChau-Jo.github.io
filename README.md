@@ -8,6 +8,16 @@
 [![Ask Me Anything !](https://img.shields.io/badge/ask%20me-linkedin-1abc9c.svg)](https://www.linkedin.com/in/varadbhogayata/)
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
+
+### Website Preview
+<p align="center"> 
+  <kbd>
+    <a href="https://TszTungChau-Jo.github.io" target="_blank"><img src="examples/preview.gif">
+  </a>
+  </kbd>
+</p>
+
+
 ## ECE444 - PRA 1 - Front-End Design
 
 ### Activity - 1
@@ -37,6 +47,7 @@ Here is the screenshot of my repository:
 - Push the generated code to the `master` branch of this repository.
 - <b>NOTE:</b> Make sure to set `analyticsId` from your Google Analytics account inside the Google Analytics script tag, if you want to use your own Google Analytics account.
 
+
 ## Sections 📚
 ✔️ About me\
 ✔️ Experience\
@@ -48,10 +59,12 @@ Here is the screenshot of my repository:
 
 To view a live example, **[click here](https://varadbhogayata.github.io/)**
 
+
 ## Tools Used 🛠️
 * [<b>GitHub Pages</b>](https://create-react-app.dev/docs/deployment/#github-pages) - To host my static website (HTML, CSS, JS).
 * [<b>Materialize</b>](https://materializecss.com/) - A CSS framework to get Google's Material Design components.
 * [<b>Typed.js</b>](https://mattboldt.com/demos/typed-js/) - JavaScript Library
+
 
 ## Contributing 💡
 #### Step 1
@@ -70,6 +83,7 @@ To view a live example, **[click here](https://varadbhogayata.github.io/)**
 #### Step 3
 
 - 🔃 Create a new pull request.
+
 
 ## License 📄
 This project is licensed under the MIT License - see the [LICENSE.md](./LICENSE) file for details.
