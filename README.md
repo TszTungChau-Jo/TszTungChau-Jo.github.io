@@ -11,6 +11,8 @@
 ## ECE444 - PRA 1 - Front-End Design
 
 ### Activity - 1
+Here is the screenshot of my repository:
+![Activity 1 Screenshot](assets/img/ECE421-PRA1-ACT1-1.png)
 
 ### Activity - 2
 
