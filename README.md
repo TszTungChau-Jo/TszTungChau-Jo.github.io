@@ -26,6 +26,14 @@ Here is the screenshot of my repository:
 ![Activity 1 Screenshot](assets/img/ECE421-PRA1-ACT1-1.png)
 
 ### Activity - 2
+Here are the screenshots of the updated personal webpage:
+![Activity 1 Screenshot](assets/img/personalWeb-1.png)
+![Activity 2 Screenshot](assets/img/personalWeb-2.png)
+![Activity 3 Screenshot](assets/img/personalWeb-3.png)
+![Activity 4 Screenshot](assets/img/personalWeb-4.png)
+![Activity 5 Screenshot](assets/img/personalWeb-5.png)
+![Activity 6 Screenshot](assets/img/personalWeb-6.png)
+![Activity 7 Screenshot](assets/img/personalWeb-7.png)
 
 ### Activity - 3
 
