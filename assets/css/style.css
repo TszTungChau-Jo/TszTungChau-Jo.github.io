@@ -116,7 +116,7 @@
 }
 
 .contactme:hover{
-  color: #00796b;
+  color: #3f51b5;
   background-color: white;
 }
 /* main body */
@@ -227,17 +227,10 @@ ul.side-nav li {
   padding: 0;
 }
 
-/* ul.side-nav.fixed a {
-  box-sizing: content-box;
-  color: rgb(48, 122, 207);
-  display: block;
-  line-height: 100%;
-  padding: 10px 0 12px;
-} */
 
 ul.side-nav.fixed a {
   box-sizing: content-box;
-  color: rgb(16, 202, 56);
+  color: #3f51b5;
   display: block;
   line-height: 100%;
   padding: 10px 0 12px;
@@ -312,15 +305,9 @@ h3 {
   height: 100vh;
 }
 
-/* Original */
-
-/* #intro.section {
-  background: url(../../assets/img/white-ai-wallpaper.jpg) no-repeat top center/cover;
-  position: relative;
-} */
 
 #intro.section {
-  background: #a7ffeb repeat;
+  background: #e3f2fd repeat;
   position: relative;
 }
 
@@ -348,7 +335,7 @@ h3 {
 }
 
 #intro.section .underline {
-  border-bottom: 5px solid #24305e;
+  border-bottom: 5px solid #1a237e;
 }
 
 #intro.section .teal {
@@ -473,7 +460,7 @@ a.hoverline {
 } */
 
 a.hoverline:hover {
-  border-bottom: 3px solid #004d40 !important;
+  border-bottom: 3px solid #303f9f !important;
 }
 
 #skills .card.large {
@@ -549,22 +536,14 @@ small {
 /* main .teal-text */
 
 .teal-text {
-  color: #008073 !important;
+  color: #3f51b5 !important;
 }
-
-/* .teal-text {
-  color: #0b5e86 !important;
-} */
 
 /* .teal */
 
 .teal {
-  background-color: #008073 !important;
+  background-color: #3f51b5 !important;
 }
-
-/* .teal {
-  background-color: #00695c !important;
-} */
 
 @media (min-width: 1200px) {
   #experience .container {
