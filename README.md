@@ -23,19 +23,21 @@
 
 ### Activity - 1
 Here is the screenshot of my repository:
-![Activity 1 Screenshot](assets/img/ECE421-PRA1-ACT1-1.png)
+![Activity 1 Screenshot 1](assets/img/ECE421-PRA1-ACT1-1.png)
 
 ### Activity - 2
 Here are the screenshots of the updated personal webpage:
-![Activity 1 Screenshot](assets/img/personalWeb-1.png)
-![Activity 2 Screenshot](assets/img/personalWeb-2.png)
-![Activity 3 Screenshot](assets/img/personalWeb-3.png)
-![Activity 4 Screenshot](assets/img/personalWeb-4.png)
-![Activity 5 Screenshot](assets/img/personalWeb-5.png)
-![Activity 6 Screenshot](assets/img/personalWeb-6.png)
-![Activity 7 Screenshot](assets/img/personalWeb-7.png)
+![Activity 2 Screenshot 1](assets/img/personalWeb-1.png)
+![Activity 2 Screenshot 2](assets/img/personalWeb-2.png)
+![Activity 2 Screenshot 3](assets/img/personalWeb-3.png)
+![Activity 2 Screenshot 4](assets/img/personalWeb-4.png)
+![Activity 2 Screenshot 5](assets/img/personalWeb-5.png)
+![Activity 2 Screenshot 5](assets/img/personalWeb-6.png)
+![Activity 2 Screenshot 6](assets/img/personalWeb-7.png)
 
 ### Activity - 3
+Here is screenshot of the updated theme:
+![Activity 7 Screenshot 1](assets/img/PRA-A3-1.png)
 
 ### Activity - 4
 
