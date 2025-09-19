@@ -2,33 +2,34 @@
 // ===== 1) The projects data =====
 const projects = [
   {
+    title: "AI-Enhanced Text-to-Speech",
+    desc: "Capstone (in progress): TTS for engineering texts, scanned PDFs, and multilingual content.",
+    image: "/assets/img/tts-logo.png",
+    tools: ["Python", "JavaScript", "TTS/ASR toolkits", "PDF parsing/OCR"],
+    demo: "",      // add a URL if you have one
+    source: "",    // add a repo link if you have one
+    date: "2025-10-01"   // newest first — adjust dates as you like
+  },
+  {
     title: "Autonomous Route-Following Car",
     desc: "Robotic car that detects course boundaries and navigates a predefined route.",
     image: "/assets/img/autocar-log.jpg",
-    tools: ["Microcontroller", "Sensor arrays", "Motor drivers", "C/C++"],
-    demo: "",                  // optional URL
-    source: "",                // optional URL
-    date: "2025-08-10"         // YYYY-MM-DD (use real dates for sorting)
+    tools: ["Microcontroller", "Motor drivers", "Sensor arrays", "C/C++"],
+    demo: "",
+    source: "",
+    date: "2025-08-15"
   },
   {
     title: "Smart Distance-Based Music Player",
-    desc: "Arduino + ultrasonic sensors to play context-specific music based on distance.",
+    desc: "Arduino UNO + ultrasonic sensors to play context-specific music based on distance.",
     image: "/assets/img/music-logo.jpg",
-    tools: ["Arduino UNO", "C/C++", "Ultrasonic sensors"],
+    tools: ["Arduino UNO", "C/C++", "Ultrasonic sensors", "Electronics"],
     demo: "",
     source: "",
     date: "2025-06-20"
-  },
-  {
-    title: "Blog Web-App",
-    desc: "A simple and extensible blog web-app based on Flask.",
-    image: "/assets/img/project-blog-logo.jpg",
-    tools: ["Flask", "SQLAlchemy", "HTML/CSS", "Python"],
-    demo: "",
-    source: "",
-    date: "2024-12-05"
   }
 ];
+
 
 // ===== 2) Sort newest first =====
 projects.sort((a, b) => new Date(b.date) - new Date(a.date));
