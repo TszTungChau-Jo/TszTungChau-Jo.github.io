@@ -37,12 +37,15 @@ Here are the screenshots of the updated personal webpage:
 
 ### Activity - 3
 Here is screenshot of the updated theme:
-![Activity 7 Screenshot 1](assets/img/PRA-A3-1.png)
+![Activity 3 Screenshot 1](assets/img/PRA-A3-1.png)
 
 ### Activity - 4
+Here is the embedding google maps:
+![Activity 4 Screenshot 1](assets/img/PRA-A4-1.png)
 
 ### Activity - 5
-
+Here is the dynamically loading for projects:
+![Activity 5 Demo](assets/img/jttc-pra1-act5.gif)
 
 ## Features 📋
 ⚡️ Fully Responsive\
