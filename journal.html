@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Journal | Joshua Chau</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">About</a>
+      <a href="journal.html" class="active">Journal</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h1>Journal</h1>
+      <p class="note">This is where I’ll write reflections, thoughts, and short learning notes.</p>
+
+      <article class="entry">
+        <h2>October 25, 2025 — Starting My Personal Webpage</h2>
+        <p>
+          Today, I started building my personal website. It’s simple, but it feels great to finally have a space
+          where I can express myself and share what I’ve been learning.  
+          The plan is to keep it minimal and reflective.
+        </p>
+      </article>
+
+      <!-- Add more <article> entries here later -->
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Joshua Chau
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
