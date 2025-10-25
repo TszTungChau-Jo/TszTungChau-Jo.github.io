@@ -53,3 +53,72 @@ footer {
   font-style: italic;
   color: #475569;
 }
+
+/* Position the header nav centered while allowing a left button */
+header { position: sticky; top: 0; z-index: 30; }
+.menu-btn {
+  position: fixed;
+  top: 10px; left: 10px;
+  z-index: 40;
+  border: none;
+  background: #111827;
+  color: #cbd5e1;
+  font-size: 1.2rem;
+  line-height: 1;
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+}
+.menu-btn:hover { color: #60a5fa; }
+
+/* Slide-out drawer */
+.drawer {
+  position: fixed;
+  inset: 0 auto 0 0; /* top:0; left:0; bottom:0 */
+  width: min(85vw, 320px);
+  background: #0f172a;
+  color: #e2e8f0;
+  transform: translateX(-100%);
+  transition: transform .25s ease;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 12px rgba(0,0,0,.25);
+}
+.drawer.open { transform: translateX(0); }
+
+.drawer-header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+.icon-btn {
+  background: transparent; border: none; color: inherit; font-size: 1.1rem; cursor: pointer;
+}
+
+.title-list {
+  list-style: none;
+  margin: 0; padding: 8px 0;
+  overflow: auto;
+}
+.title-list li { margin: 0; }
+.title-list a {
+  display: block;
+  padding: 10px 16px;
+  color: #cbd5e1;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+}
+.title-list a:hover {
+  color: #60a5fa;
+  background: rgba(255,255,255,.04);
+  border-left-color: #60a5fa;
+}
+
+/* Backdrop */
+.backdrop {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.35);
+  z-index: 40;
+}

@@ -7,6 +7,21 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Toggle button (top-left) -->
+  <button id="menuBtn" class="menu-btn" aria-label="Open journal titles" aria-expanded="false" aria-controls="titleDrawer">☰</button>
+
+  <!-- Slide-out drawer with titles -->
+  <aside id="titleDrawer" class="drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <strong>Journal Titles</strong>
+      <button id="closeDrawer" class="icon-btn" aria-label="Close">✕</button>
+    </div>
+    <ul id="titleList" class="title-list"></ul>
+  </aside>
+
+  <!-- Backdrop for click-to-close -->
+  <div id="backdrop" class="backdrop" hidden></div>
+  
   <header>
     <nav>
       <a href="index.html">About</a>
@@ -44,5 +59,68 @@
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
+  <script>
+    // Utility to slugify a heading to an id
+    function slugify(text) {
+      return text.toLowerCase()
+        .replace(/[^a-z0-9\s\-–—]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/\-+/g, '-')
+        .trim();
+    }
+
+    // Build the title list from article headings
+    const entries = document.querySelectorAll('.entry');
+    const listEl = document.getElementById('titleList');
+    entries.forEach((entry, idx) => {
+      const h2 = entry.querySelector('h2');
+      if (!h2) return;
+      let id = entry.id || slugify(h2.textContent) || `entry-${idx+1}`;
+      entry.id = id; // ensure the article is linkable
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = `#${id}`;
+      a.textContent = h2.textContent;
+      a.addEventListener('click', () => closeDrawer());
+      li.appendChild(a);
+      listEl.appendChild(li);
+    });
+
+    // Drawer open/close behavior
+    const menuBtn = document.getElementById('menuBtn');
+    const drawer = document.getElementById('titleDrawer');
+    const closeBtn = document.getElementById('closeDrawer');
+    const backdrop = document.getElementById('backdrop');
+
+    function openDrawer() {
+      drawer.classList.add('open');
+      drawer.setAttribute('aria-hidden', 'false');
+      backdrop.hidden = false;
+      menuBtn.setAttribute('aria-expanded', 'true');
+      // focus first link if present
+      const first = drawer.querySelector('a');
+      if (first) first.focus();
+    }
+    function closeDrawer() {
+      drawer.classList.remove('open');
+      drawer.setAttribute('aria-hidden', 'true');
+      backdrop.hidden = true;
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.focus();
+    }
+
+    menuBtn.addEventListener('click', openDrawer);
+    closeBtn.addEventListener('click', closeDrawer);
+    backdrop.addEventListener('click', closeDrawer);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
+    });
+
+    // Keep your existing year script if present
+    const y = document.getElementById("year");
+    if (y) y.textContent = new Date().getFullYear();
+  </script>
+
 </body>
 </html>
