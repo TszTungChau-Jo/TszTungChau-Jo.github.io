@@ -7,29 +7,18 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Toggle button (top-left) -->
-  <button id="menuBtn" class="menu-btn" aria-label="Open journal titles" aria-expanded="false" aria-controls="titleDrawer">☰</button>
-
-  <!-- Slide-out drawer with titles -->
-  <aside id="titleDrawer" class="drawer" aria-hidden="true">
-    <div class="drawer-header">
-      <strong>Journal Titles</strong>
-      <button id="closeDrawer" class="icon-btn" aria-label="Close">✕</button>
-    </div>
-    <ul id="titleList" class="title-list"></ul>
-  </aside>
-
-  <!-- Backdrop for click-to-close -->
-  <div id="backdrop" class="backdrop" hidden></div>
-  
-  <header>
+  <header class="sidebar">
+    <h2>Joshua Chau</h2>
     <nav>
       <a href="index.html">About</a>
       <a href="journal.html" class="active">Journal</a>
     </nav>
+    <div class="sidebar-section-title">Journal Titles</div>
+    <ul id="titleList" class="title-list"></ul>
   </header>
 
-  <main>
+  <div class="content-wrapper">
+    <main>
     <section>
       <h1>Journal</h1>
       <p class="note">This is where I’ll write reflections, thoughts, and short learning notes.</p>
@@ -79,6 +68,7 @@
   <footer>
     © <span id="year"></span> Joshua Chau
   </footer>
+  </div>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
@@ -106,39 +96,8 @@
       const a = document.createElement('a');
       a.href = `#${id}`;
       a.textContent = h2.textContent;
-      a.addEventListener('click', () => closeDrawer());
       li.appendChild(a);
       listEl.appendChild(li);
-    });
-
-    // Drawer open/close behavior
-    const menuBtn = document.getElementById('menuBtn');
-    const drawer = document.getElementById('titleDrawer');
-    const closeBtn = document.getElementById('closeDrawer');
-    const backdrop = document.getElementById('backdrop');
-
-    function openDrawer() {
-      drawer.classList.add('open');
-      drawer.setAttribute('aria-hidden', 'false');
-      backdrop.hidden = false;
-      menuBtn.setAttribute('aria-expanded', 'true');
-      // focus first link if present
-      const first = drawer.querySelector('a');
-      if (first) first.focus();
-    }
-    function closeDrawer() {
-      drawer.classList.remove('open');
-      drawer.setAttribute('aria-hidden', 'true');
-      backdrop.hidden = true;
-      menuBtn.setAttribute('aria-expanded', 'false');
-      menuBtn.focus();
-    }
-
-    menuBtn.addEventListener('click', openDrawer);
-    closeBtn.addEventListener('click', closeDrawer);
-    backdrop.addEventListener('click', closeDrawer);
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && drawer.classList.contains('open')) closeDrawer();
     });
 
     // Keep your existing year script if present

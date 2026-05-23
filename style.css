@@ -4,121 +4,181 @@ body {
   color: #111;
   margin: 0;
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
 }
 
-header {
+@media (min-width: 769px) {
+  body {
+    flex-direction: row;
+  }
+}
+
+/* Sidebar Styling */
+.sidebar {
   background: #111827;
-  color: white;
-  padding: 1rem;
-  text-align: center;
+  color: #e2e8f0;
+  padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 12px rgba(0,0,0,.15);
+  z-index: 50;
+  overflow-y: auto;
 }
 
-nav a {
+@media (min-width: 769px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 260px;
+    box-sizing: border-box;
+  }
+}
+
+.sidebar h2 {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.sidebar nav a {
   color: #cbd5e1;
-  margin: 0 10px;
   text-decoration: none;
   font-weight: 500;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
 }
 
-nav a:hover, nav a.active {
+.sidebar nav a:hover, .sidebar nav a.active {
+  background: rgba(255, 255, 255, 0.1);
   color: #60a5fa;
+  transform: translateX(4px);
 }
 
-main {
-  max-width: 700px;
-  margin: 2rem auto;
+/* Journal Titles integrated into Sidebar */
+.sidebar-section-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #64748b;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
   padding: 0 1rem;
 }
 
-h1, h2 {
+.title-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.title-list a {
+  display: block;
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.title-list a:hover {
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Main Content Area */
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+@media (min-width: 769px) {
+  .content-wrapper {
+    margin-left: 260px;
+  }
+}
+
+main {
+  max-width: 750px;
+  margin: 4rem auto 2rem;
+  padding: 0 2rem;
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+h1 {
+  color: #0f172a;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.5px;
+}
+
+h2 {
   color: #1e293b;
 }
 
 .entry {
   background: white;
-  border-radius: 10px;
-  padding: 1rem 1.5rem;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  margin: 1.5rem 0;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  margin: 2rem 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.entry:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+}
+
+.entry h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #0f172a;
 }
 
 footer {
   text-align: center;
-  color: #555;
-  font-size: 0.9rem;
-  margin: 2rem 0;
+  color: #64748b;
+  font-size: 0.95rem;
+  padding: 2rem;
+  margin-top: auto;
+}
+
+footer a {
+  color: #64748b;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: #0f172a;
 }
 
 .note {
   font-style: italic;
   color: #475569;
-}
-
-/* Position the header nav centered while allowing a left button */
-header { position: sticky; top: 0; z-index: 30; }
-.menu-btn {
-  position: fixed;
-  top: 10px; left: 10px;
-  z-index: 40;
-  border: none;
-  background: #111827;
-  color: #cbd5e1;
-  font-size: 1.2rem;
-  line-height: 1;
-  padding: 8px 10px;
-  border-radius: 8px;
-  cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0,0,0,.15);
-}
-.menu-btn:hover { color: #60a5fa; }
-
-/* Slide-out drawer */
-.drawer {
-  position: fixed;
-  inset: 0 auto 0 0; /* top:0; left:0; bottom:0 */
-  width: min(85vw, 320px);
-  background: #0f172a;
-  color: #e2e8f0;
-  transform: translateX(-100%);
-  transition: transform .25s ease;
-  z-index: 50;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 2px 0 12px rgba(0,0,0,.25);
-}
-.drawer.open { transform: translateX(0); }
-
-.drawer-header {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 14px 16px;
-  border-bottom: 1px solid rgba(255,255,255,.08);
-}
-.icon-btn {
-  background: transparent; border: none; color: inherit; font-size: 1.1rem; cursor: pointer;
-}
-
-.title-list {
-  list-style: none;
-  margin: 0; padding: 8px 0;
-  overflow: auto;
-}
-.title-list li { margin: 0; }
-.title-list a {
-  display: block;
-  padding: 10px 16px;
-  color: #cbd5e1;
-  text-decoration: none;
-  border-left: 3px solid transparent;
-}
-.title-list a:hover {
-  color: #60a5fa;
-  background: rgba(255,255,255,.04);
-  border-left-color: #60a5fa;
-}
-
-/* Backdrop */
-.backdrop {
-  position: fixed; inset: 0;
-  background: rgba(0,0,0,.35);
-  z-index: 40;
+  font-size: 1.1rem;
 }
