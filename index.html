@@ -7,6 +7,11 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Sidebar Toggle Button -->
+  <button id="sidebarToggle" class="sidebar-toggle" aria-label="Toggle sidebar">☰</button>
+  <!-- Mobile Backdrop -->
+  <div id="sidebarBackdrop" class="backdrop"></div>
+
   <header class="sidebar">
     <h2>Joshua Chau</h2>
     <nav>
@@ -37,6 +42,36 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Sidebar toggle logic
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    const sidebarBackdrop = document.getElementById('sidebarBackdrop');
+
+    function toggleSidebar() {
+      const isMobile = window.innerWidth <= 768;
+      if (isMobile) {
+        document.body.classList.toggle('sidebar-open');
+        sidebarToggle.textContent = document.body.classList.contains('sidebar-open') ? '✕' : '☰';
+      } else {
+        document.body.classList.toggle('sidebar-collapsed');
+      }
+    }
+
+    sidebarToggle.addEventListener('click', toggleSidebar);
+    if (sidebarBackdrop) {
+      sidebarBackdrop.addEventListener('click', () => {
+        document.body.classList.remove('sidebar-open');
+        sidebarToggle.textContent = '☰';
+      });
+    }
+
+    // Reset state on resize
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        document.body.classList.remove('sidebar-open');
+        sidebarToggle.textContent = '☰';
+      }
+    });
   </script>
 </body>
 </html>
