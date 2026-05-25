@@ -1,11 +1,89 @@
+/* ===== Theme Variables ===== */
+:root {
+  --bg: #f6f8fa;
+  --bg-glow: none;
+  --text: #111;
+  --text-muted: #475569;
+  --heading: #0f172a;
+  --heading-secondary: #1e293b;
+  --card-bg: white;
+  --card-shadow: rgba(0, 0, 0, 0.05);
+  --card-shadow-hover: rgba(0, 0, 0, 0.05);
+  --card-border: transparent;
+  --sidebar-bg: #111827;
+  --sidebar-text: #e2e8f0;
+  --sidebar-heading: #fff;
+  --sidebar-link: #cbd5e1;
+  --sidebar-link-hover-bg: rgba(255, 255, 255, 0.1);
+  --sidebar-link-hover: #60a5fa;
+  --sidebar-section: #64748b;
+  --sidebar-title-link: #94a3b8;
+  --sidebar-title-link-hover: #e2e8f0;
+  --sidebar-title-link-hover-bg: rgba(255, 255, 255, 0.05);
+  --toggle-bg: #1e293b;
+  --toggle-hover: #334155;
+  --toggle-active: #475569;
+  --backdrop-bg: rgba(0, 0, 0, 0.4);
+  --github-color: rgb(99, 102, 241);
+  --github-hover: rgb(79, 70, 229);
+  --linkedin-color: rgb(10, 102, 194);
+  --linkedin-hover: rgb(0, 65, 130);
+  --note-color: #475569;
+}
+
+[data-theme="dark"] {
+  --bg: #0d1117;
+  --bg-glow: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(30, 64, 130, 0.25) 0%, transparent 70%);
+  --text: #e6edf3;
+  --text-muted: #8b949e;
+  --heading: #e6edf3;
+  --heading-secondary: #c9d1d9;
+  --card-bg: #161b22;
+  --card-shadow: rgba(0, 0, 0, 0.3);
+  --card-shadow-hover: rgba(0, 0, 0, 0.4);
+  --card-border: rgba(48, 54, 61, 0.6);
+  --sidebar-bg: #010409;
+  --sidebar-text: #c9d1d9;
+  --sidebar-heading: #f0f6fc;
+  --sidebar-link: #8b949e;
+  --sidebar-link-hover-bg: rgba(255, 255, 255, 0.06);
+  --sidebar-link-hover: #58a6ff;
+  --sidebar-section: #484f58;
+  --sidebar-title-link: #8b949e;
+  --sidebar-title-link-hover: #c9d1d9;
+  --sidebar-title-link-hover-bg: rgba(255, 255, 255, 0.04);
+  --toggle-bg: #21262d;
+  --toggle-hover: #30363d;
+  --toggle-active: #484f58;
+  --backdrop-bg: rgba(0, 0, 0, 0.6);
+  --github-color: #a5b4fc;
+  --github-hover: #818cf8;
+  --linkedin-color: #58a6ff;
+  --linkedin-hover: #79c0ff;
+  --note-color: #8b949e;
+}
+
+/* ===== Base ===== */
 body {
   font-family: "Inter", system-ui, sans-serif;
-  background: #f6f8fa;
-  color: #111;
+  background: var(--bg);
+  color: var(--text);
   margin: 0;
   line-height: 1.6;
   display: flex;
   flex-direction: column;
+  transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+/* Background glow overlay for dark mode */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: var(--bg-glow);
+  pointer-events: none;
+  z-index: 0;
+  transition: background 0.35s ease;
 }
 
 @media (min-width: 769px) {
@@ -14,15 +92,15 @@ body {
   }
 }
 
-/* Sidebar Styling */
+/* ===== Sidebar Styling ===== */
 .sidebar {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   width: 260px;
-  background: #111827;
-  color: #e2e8f0;
+  background: var(--sidebar-bg);
+  color: var(--sidebar-text);
   padding: 4rem 1.5rem 2.5rem;
   /* Increased top padding for toggle button */
   display: flex;
@@ -30,7 +108,7 @@ body {
   box-shadow: 2px 0 12px rgba(0, 0, 0, .15);
   z-index: 50;
   overflow-y: auto;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.35s ease;
   transform: translateX(0);
 }
 
@@ -51,7 +129,7 @@ body {
 }
 
 .sidebar h2 {
-  color: #fff;
+  color: var(--sidebar-heading);
   margin-top: 0;
   margin-bottom: 2rem;
   font-size: 1.25rem;
@@ -67,7 +145,7 @@ body {
 }
 
 .sidebar nav a {
-  color: #cbd5e1;
+  color: var(--sidebar-link);
   text-decoration: none;
   font-weight: 500;
   padding: 0.6rem 1rem;
@@ -77,8 +155,8 @@ body {
 
 .sidebar nav a:hover,
 .sidebar nav a.active {
-  background: rgba(255, 255, 255, 0.1);
-  color: #60a5fa;
+  background: var(--sidebar-link-hover-bg);
+  color: var(--sidebar-link-hover);
   transform: translateX(4px);
 }
 
@@ -86,7 +164,7 @@ body {
 .sidebar-section-title {
   font-size: 0.75rem;
   text-transform: uppercase;
-  color: #64748b;
+  color: var(--sidebar-section);
   margin-bottom: 1rem;
   font-weight: 700;
   letter-spacing: 1px;
@@ -104,7 +182,7 @@ body {
 
 .title-list a {
   display: block;
-  color: #94a3b8;
+  color: var(--sidebar-title-link);
   text-decoration: none;
   font-size: 0.9rem;
   line-height: 1.4;
@@ -114,16 +192,18 @@ body {
 }
 
 .title-list a:hover {
-  color: #e2e8f0;
-  background: rgba(255, 255, 255, 0.05);
+  color: var(--sidebar-title-link-hover);
+  background: var(--sidebar-title-link-hover-bg);
 }
 
-/* Main Content Area */
+/* ===== Main Content Area ===== */
 .content-wrapper {
   flex: 1;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  position: relative;
+  z-index: 1;
   transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -147,35 +227,38 @@ main {
 }
 
 h1 {
-  color: #0f172a;
+  color: var(--heading);
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
   letter-spacing: -0.5px;
+  transition: color 0.35s ease;
 }
 
 h2 {
-  color: #1e293b;
+  color: var(--heading-secondary);
+  transition: color 0.35s ease;
 }
 
 .entry {
-  background: white;
+  background: var(--card-bg);
   border-radius: 12px;
   padding: 2rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 6px -1px var(--card-shadow), 0 2px 4px -1px var(--card-shadow);
+  border: 1px solid var(--card-border);
   margin: 2rem 0;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.35s ease, border-color 0.35s ease;
 }
 
 .entry:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+  box-shadow: 0 10px 15px -3px var(--card-shadow-hover), 0 4px 6px -2px var(--card-shadow-hover);
 }
 
 .entry h2 {
   margin-top: 0;
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: #0f172a;
+  color: var(--heading);
 }
 
 footer {
@@ -188,7 +271,7 @@ footer {
 }
 
 .github-btn {
-  color: rgb(99, 102, 241);
+  color: var(--github-color);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -197,12 +280,12 @@ footer {
 }
 
 .github-btn:hover {
-  color: rgb(79, 70, 229);
+  color: var(--github-hover);
   transform: scale(1.1);
 }
 
 .linkedin-btn {
-  color: rgb(10, 102, 194);
+  color: var(--linkedin-color);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -211,23 +294,24 @@ footer {
 }
 
 .linkedin-btn:hover {
-  color: rgb(0, 65, 130);
+  color: var(--linkedin-hover);
   transform: scale(1.1);
 }
 
 .note {
   font-style: italic;
-  color: #475569;
+  color: var(--note-color);
   font-size: 1.1rem;
+  transition: color 0.35s ease;
 }
 
-/* Sidebar Toggle Button */
+/* ===== Sidebar Toggle Button ===== */
 .sidebar-toggle {
   position: fixed;
   top: 15px;
   left: 15px;
   z-index: 60;
-  background: #1e293b;
+  background: var(--toggle-bg);
   color: white;
   border: none;
   border-radius: 8px;
@@ -243,20 +327,52 @@ footer {
 }
 
 .sidebar-toggle:hover {
-  background: #334155;
+  background: var(--toggle-hover);
   transform: scale(1.05);
 }
 
 .sidebar-toggle:active {
-  background: #475569;
+  background: var(--toggle-active);
   transform: scale(0.95);
 }
 
-/* Backdrop for mobile */
+/* ===== Theme Toggle Button ===== */
+.theme-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 60;
+  background: var(--toggle-bg);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+  transition: all 0.25s ease;
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.theme-toggle:hover {
+  background: var(--toggle-hover);
+  transform: scale(1.1);
+}
+
+.theme-toggle:active {
+  background: var(--toggle-active);
+  transform: scale(0.95);
+}
+
+/* ===== Backdrop for mobile ===== */
 .backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  background: var(--backdrop-bg);
   z-index: 40;
   opacity: 0;
   pointer-events: none;
