@@ -336,12 +336,12 @@ footer {
   transform: scale(0.95);
 }
 
-/* ===== Theme Toggle Button ===== */
+/* ===== Theme Toggle Button (inside sidebar) ===== */
 .theme-toggle {
-  position: fixed;
+  position: absolute;
   top: 15px;
-  right: 15px;
-  z-index: 60;
+  left: 60px;
+  z-index: 10;
   background: var(--toggle-bg);
   color: white;
   border: none;
