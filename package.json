@@ -1,0 +1,25 @@
+{
+  "name": "tsztungchau-jo.github.io",
+  "version": "1.0.0",
+  "description": "Serves as Joshua's personal webpage",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TszTungChau-Jo/TszTungChau-Jo.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TszTungChau-Jo/TszTungChau-Jo.github.io/issues"
+  },
+  "homepage": "https://github.com/TszTungChau-Jo/TszTungChau-Jo.github.io#readme",
+  "devDependencies": {
+    "vite": "^8.0.14"
+  }
+}

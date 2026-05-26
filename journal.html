@@ -13,7 +13,8 @@
       document.documentElement.setAttribute('data-theme', theme);
     })();
   </script>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/src/css/style.css" />
+  <script type="module" src="/src/js/main.js"></script>
 </head>
 
 <body>
@@ -24,12 +25,12 @@
 
   <header class="sidebar">
     <!-- Theme Toggle Button (inside sidebar) -->
-    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">🌙</button>
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme"></button>
     <h2>Joshua Chau</h2>
     <nav>
       <a href="index.html">About</a>
       <a href="journal.html" class="active">Journal</a>
-      <a href="resume.html">Professions</a>
+      <a href="professions.html">Professions</a>
     </nav>
     <div class="sidebar-section-title">Journal Titles</div>
     <ul id="titleList" class="title-list"></ul>
@@ -96,114 +97,6 @@
       </a>
     </footer>
   </div>
-
-  <script>
-    // Sidebar toggle logic
-    const sidebarToggle = document.getElementById('sidebarToggle');
-    const sidebarBackdrop = document.getElementById('sidebarBackdrop');
-
-    function toggleSidebar() {
-      const isMobile = window.innerWidth <= 768;
-      if (isMobile) {
-        document.body.classList.toggle('sidebar-open');
-        sidebarToggle.textContent = document.body.classList.contains('sidebar-open') ? '✕' : '☰';
-      } else {
-        document.body.classList.toggle('sidebar-collapsed');
-      }
-    }
-
-    if (sidebarToggle) {
-      sidebarToggle.addEventListener('click', toggleSidebar);
-    }
-    if (sidebarBackdrop) {
-      sidebarBackdrop.addEventListener('click', () => {
-        document.body.classList.remove('sidebar-open');
-        sidebarToggle.textContent = '☰';
-      });
-    }
-
-    // Reset state on resize
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 768) {
-        document.body.classList.remove('sidebar-open');
-        if (sidebarToggle) sidebarToggle.textContent = '☰';
-      }
-    });
-  </script>
-
-  <script>
-    // Utility to slugify a heading to an id
-    function slugify(text) {
-      return text.toLowerCase()
-        .replace(/[^a-z0-9\s\-–—]/g, '')
-        .replace(/\s+/g, '-')
-        .replace(/\-+/g, '-')
-        .trim();
-    }
-
-    // Build the title list from article headings
-    const entries = document.querySelectorAll('.entry');
-    const listEl = document.getElementById('titleList');
-    entries.forEach((entry, idx) => {
-      const h2 = entry.querySelector('h2');
-      if (!h2) return;
-      let id = entry.id || slugify(h2.textContent) || `entry-${idx + 1}`;
-      entry.id = id; // ensure the article is linkable
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = `#${id}`;
-      a.textContent = h2.textContent;
-      a.addEventListener('click', () => {
-        if (window.innerWidth <= 768) {
-          document.body.classList.remove('sidebar-open');
-          if (sidebarToggle) sidebarToggle.textContent = '☰';
-        }
-      });
-      li.appendChild(a);
-      listEl.appendChild(li);
-    });
-
-    // Keep your existing year script if present
-    const y = document.getElementById("year");
-    if (y) y.textContent = new Date().getFullYear();
-  </script>
-
-  <script>
-    // Theme toggle logic
-    (function () {
-      const themeToggle = document.getElementById('themeToggle');
-      const root = document.documentElement;
-
-      function getPreferredTheme() {
-        const saved = localStorage.getItem('theme');
-        if (saved) return saved;
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      }
-
-      function applyTheme(theme) {
-        root.setAttribute('data-theme', theme);
-        themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
-        themeToggle.title = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
-        themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-      }
-
-      applyTheme(getPreferredTheme());
-
-      themeToggle.addEventListener('click', () => {
-        const current = root.getAttribute('data-theme');
-        const next = current === 'dark' ? 'light' : 'dark';
-        localStorage.setItem('theme', next);
-        applyTheme(next);
-      });
-
-      // Listen for OS theme changes
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-        if (!localStorage.getItem('theme')) {
-          applyTheme(e.matches ? 'dark' : 'light');
-        }
-      });
-    })();
-  </script>
 
 </body>
 

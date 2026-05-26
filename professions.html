@@ -14,7 +14,8 @@
       document.documentElement.setAttribute('data-theme', theme);
     })();
   </script>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/src/css/style.css" />
+  <script type="module" src="/src/js/main.js"></script>
 </head>
 
 <body>
@@ -25,12 +26,12 @@
 
   <header class="sidebar">
     <!-- Theme Toggle Button (inside sidebar) -->
-    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">🌙</button>
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme"></button>
     <h2>Joshua Chau</h2>
     <nav>
       <a href="index.html">About</a>
       <a href="journal.html">Journal</a>
-      <a href="resume.html" class="active">Professions</a>
+      <a href="professions.html" class="active">Professions</a>
     </nav>
   </header>
 
@@ -59,7 +60,7 @@
             <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             <span>LinkedIn</span>
           </a>
-          <a href="JoshuaTTC_resume.pdf" target="_blank" title="View Resume PDF">
+          <a href="/docs/JoshuaTTC_resume.pdf" target="_blank" title="View Resume PDF">
             <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
             <span>View PDF</span>
           </a>
@@ -347,121 +348,9 @@
   </div>
 
   <!-- Download Resume FAB -->
-  <a href="JoshuaTTC_resume.pdf" target="_blank" class="download-fab" title="View Resume PDF" aria-label="View Resume PDF">
+  <a href="/docs/JoshuaTTC_resume.pdf" target="_blank" class="download-fab" title="View Resume PDF" aria-label="View Resume PDF">
     <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
   </a>
-
-  <script>
-    // Copy email to clipboard logic
-    function copyEmail(btn) {
-      navigator.clipboard.writeText('joshuatt.chau@mail.utoronto.ca').then(() => {
-        const textSpan = btn.querySelector('.email-text');
-        const originalText = textSpan.textContent;
-        textSpan.textContent = 'Copied!';
-        btn.style.color = '#3b82f6';
-        
-        setTimeout(() => {
-          textSpan.textContent = originalText;
-          btn.style.color = '';
-        }, 2000);
-      });
-    }
-
-    // Sidebar toggle logic
-    const sidebarToggle = document.getElementById('sidebarToggle');
-    const sidebarBackdrop = document.getElementById('sidebarBackdrop');
-
-    function updateToggleLabel() {
-      const isMobile = window.innerWidth <= 768;
-      const isOpen = isMobile
-        ? document.body.classList.contains('sidebar-open')
-        : !document.body.classList.contains('sidebar-collapsed');
-      const label = isOpen ? 'Close sidebar' : 'Open sidebar';
-      sidebarToggle.title = label;
-      sidebarToggle.setAttribute('aria-label', label);
-    }
-
-    function toggleSidebar() {
-      const isMobile = window.innerWidth <= 768;
-      if (isMobile) {
-        document.body.classList.toggle('sidebar-open');
-        sidebarToggle.textContent = document.body.classList.contains('sidebar-open') ? '✕' : '☰';
-      } else {
-        document.body.classList.toggle('sidebar-collapsed');
-      }
-      updateToggleLabel();
-    }
-
-    sidebarToggle.addEventListener('click', toggleSidebar);
-    if (sidebarBackdrop) {
-      sidebarBackdrop.addEventListener('click', () => {
-        document.body.classList.remove('sidebar-open');
-        sidebarToggle.textContent = '☰';
-        updateToggleLabel();
-      });
-    }
-
-    // Reset state on resize
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 768) {
-        document.body.classList.remove('sidebar-open');
-        sidebarToggle.textContent = '☰';
-        updateToggleLabel();
-      }
-    });
-  </script>
-
-  <script>
-    // Theme toggle logic
-    (function () {
-      const themeToggle = document.getElementById('themeToggle');
-      const root = document.documentElement;
-
-      function getPreferredTheme() {
-        const saved = localStorage.getItem('theme');
-        if (saved) return saved;
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      }
-
-      function applyTheme(theme) {
-        root.setAttribute('data-theme', theme);
-        themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
-        themeToggle.title = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
-        themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-      }
-
-      applyTheme(getPreferredTheme());
-
-      themeToggle.addEventListener('click', () => {
-        const current = root.getAttribute('data-theme');
-        const next = current === 'dark' ? 'light' : 'dark';
-        localStorage.setItem('theme', next);
-        applyTheme(next);
-      });
-
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-        if (!localStorage.getItem('theme')) {
-          applyTheme(e.matches ? 'dark' : 'light');
-        }
-      });
-    })();
-  </script>
-
-  <script>
-    // Scroll-triggered fade-in animations using IntersectionObserver
-    (function () {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-      document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
-    })();
-  </script>
 
 </body>
 

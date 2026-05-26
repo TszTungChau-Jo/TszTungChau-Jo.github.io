@@ -358,6 +358,13 @@ footer {
   line-height: 1;
 }
 
+.theme-toggle::after {
+  content: "🌙";
+}
+
+[data-theme="dark"] .theme-toggle::after {
+  content: "☀️";
+}
 .theme-toggle:hover {
   background: var(--toggle-hover);
   transform: scale(1.1);

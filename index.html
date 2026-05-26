@@ -13,7 +13,8 @@
       document.documentElement.setAttribute('data-theme', theme);
     })();
   </script>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/src/css/style.css" />
+  <script type="module" src="/src/js/main.js"></script>
 </head>
 
 <body>
@@ -24,12 +25,12 @@
 
   <header class="sidebar">
     <!-- Theme Toggle Button (inside sidebar) -->
-    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">🌙</button>
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme"></button>
     <h2>Joshua Chau</h2>
     <nav>
       <a href="index.html" class="active">About</a>
       <a href="journal.html">Journal</a>
-      <a href="resume.html">Professions</a>
+      <a href="professions.html">Professions</a>
     </nav>
   </header>
 
@@ -65,87 +66,6 @@
 
   </div>
 
-  <script>
-    // Sidebar toggle logic
-    const sidebarToggle = document.getElementById('sidebarToggle');
-    const sidebarBackdrop = document.getElementById('sidebarBackdrop');
-
-    function updateToggleLabel() {
-      const isMobile = window.innerWidth <= 768;
-      const isOpen = isMobile
-        ? document.body.classList.contains('sidebar-open')
-        : !document.body.classList.contains('sidebar-collapsed');
-      const label = isOpen ? 'Close sidebar' : 'Open sidebar';
-      sidebarToggle.title = label;
-      sidebarToggle.setAttribute('aria-label', label);
-    }
-
-    function toggleSidebar() {
-      const isMobile = window.innerWidth <= 768;
-      if (isMobile) {
-        document.body.classList.toggle('sidebar-open');
-        sidebarToggle.textContent = document.body.classList.contains('sidebar-open') ? '✕' : '☰';
-      } else {
-        document.body.classList.toggle('sidebar-collapsed');
-      }
-      updateToggleLabel();
-    }
-
-    sidebarToggle.addEventListener('click', toggleSidebar);
-    if (sidebarBackdrop) {
-      sidebarBackdrop.addEventListener('click', () => {
-        document.body.classList.remove('sidebar-open');
-        sidebarToggle.textContent = '☰';
-        updateToggleLabel();
-      });
-    }
-
-    // Reset state on resize
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 768) {
-        document.body.classList.remove('sidebar-open');
-        sidebarToggle.textContent = '☰';
-        updateToggleLabel();
-      }
-    });
-  </script>
-
-  <script>
-    // Theme toggle logic
-    (function () {
-      const themeToggle = document.getElementById('themeToggle');
-      const root = document.documentElement;
-
-      function getPreferredTheme() {
-        const saved = localStorage.getItem('theme');
-        if (saved) return saved;
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      }
-
-      function applyTheme(theme) {
-        root.setAttribute('data-theme', theme);
-        themeToggle.textContent = theme === 'dark' ? '☀️' : '🌙';
-        themeToggle.title = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
-        themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
-      }
-
-      applyTheme(getPreferredTheme());
-
-      themeToggle.addEventListener('click', () => {
-        const current = root.getAttribute('data-theme');
-        const next = current === 'dark' ? 'light' : 'dark';
-        localStorage.setItem('theme', next);
-        applyTheme(next);
-      });
-
-      // Listen for OS theme changes
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-        if (!localStorage.getItem('theme')) {
-          applyTheme(e.matches ? 'dark' : 'light');
-        }
-      });
-    })();
-  </script>
 </body>
 
 </html>
