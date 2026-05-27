@@ -306,15 +306,7 @@ body::before {
   margin: 0.25rem 0 0;
 }
 
-.contact-info-link {
-  color: var(--sidebar-link-hover);
-  text-decoration: none;
-  font-weight: 600;
-}
 
-.contact-info-link:hover {
-  text-decoration: underline;
-}
 
 @media (min-width: 769px) {
   .content-wrapper {
