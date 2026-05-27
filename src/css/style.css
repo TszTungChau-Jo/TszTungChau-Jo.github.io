@@ -337,6 +337,10 @@ h1 {
 
 h2 {
   color: var(--heading-secondary);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
   transition: color 0.35s ease;
 }
 
@@ -521,6 +525,218 @@ footer {
   transform: translateY(0);
 }
 
+/* ========================================
+   HORIZONTAL TIMELINE STYLES (MY JOURNEY)
+   ======================================== */
+.ht-wrapper {
+  width: 100%;
+  overflow: hidden; /* Prevent both scrollbars */
+  margin: 2rem 0;
+  border-radius: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border, rgba(0,0,0,0.08));
+  box-shadow: 0 4px 6px -1px var(--card-shadow);
+}
+
+.ht-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 140px 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ht-axis {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  right: 2rem;
+  height: 4px;
+  background: var(--card-border);
+  transform: translateY(-50%);
+  z-index: 1;
+  border-radius: 2px;
+}
+
+.ht-item {
+  flex: 1;
+  height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.ht-node {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  box-shadow: 0 0 0 5px var(--card-bg);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  cursor: pointer;
+  z-index: 3;
+}
+
+.ht-node:hover {
+  transform: scale(1.2);
+}
+
+.ht-content {
+  position: absolute;
+  width: 160px;
+  text-align: center;
+  opacity: 0.85;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.ht-item:hover .ht-content {
+  opacity: 1;
+}
+
+.ht-item.up .ht-content {
+  bottom: 0;
+  margin-bottom: 45px;
+}
+.ht-item.up:hover .ht-content {
+  transform: translateY(-5px);
+}
+
+.ht-item.down .ht-content {
+  top: 0;
+  margin-top: 45px;
+}
+.ht-item.down:hover .ht-content {
+  transform: translateY(5px);
+}
+
+.ht-connector {
+  position: absolute;
+  width: 2px;
+  background: var(--card-border);
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: background-color 0.3s ease;
+}
+
+.ht-item.up .ht-connector {
+  bottom: 0;
+  height: 25px;
+  margin-bottom: 24px;
+}
+
+.ht-item.down .ht-connector {
+  top: 0;
+  height: 25px;
+  margin-top: 24px;
+}
+
+.ht-item:hover .ht-connector {
+  background: var(--sidebar-link-hover);
+}
+
+.ht-year {
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--heading);
+  margin-bottom: 0.25rem;
+  font-family: monospace;
+}
+
+.ht-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* Node Colors */
+.ht-node.c1 { background: #e11d48; }
+.ht-node.c1:hover { box-shadow: 0 0 0 6px var(--card-bg), 0 0 15px #e11d48; }
+
+.ht-node.c2 { background: #d946ef; }
+.ht-node.c2:hover { box-shadow: 0 0 0 6px var(--card-bg), 0 0 15px #d946ef; }
+
+.ht-node.c3 { background: #8b5cf6; }
+.ht-node.c3:hover { box-shadow: 0 0 0 6px var(--card-bg), 0 0 15px #8b5cf6; }
+
+.ht-node.c4 { background: #3b82f6; }
+.ht-node.c4:hover { box-shadow: 0 0 0 6px var(--card-bg), 0 0 15px #3b82f6; }
+
+.ht-node.c5 { background: #0ea5e9; }
+.ht-node.c5:hover { box-shadow: 0 0 0 6px var(--card-bg), 0 0 15px #0ea5e9; }
+
+.ht-node.c6 { background: #10b981; }
+.ht-node.c6:hover { box-shadow: 0 0 0 5px var(--card-bg), 0 0 15px #10b981; }
+
+/* Responsive Mobile Timeline */
+@media (max-width: 768px) {
+  .ht-wrapper {
+    padding: 1rem 0;
+  }
+  .ht-container {
+    flex-direction: column;
+    padding: 2rem;
+    align-items: flex-start;
+  }
+  .ht-axis {
+    top: 3rem;
+    bottom: 3rem;
+    left: calc(2rem + 22px); /* 2rem padding + 22px half node */
+    right: auto;
+    width: 4px;
+    height: auto;
+    transform: none;
+  }
+  .ht-item {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-bottom: 2.5rem;
+  }
+  .ht-item:last-child {
+    margin-bottom: 0;
+  }
+  .ht-node {
+    position: relative;
+    z-index: 3;
+    flex-shrink: 0;
+  }
+  .ht-content {
+    position: relative;
+    width: auto;
+    max-width: 100%;
+    flex: 1;
+    margin-left: 1.5rem;
+    text-align: left;
+    opacity: 1;
+  }
+  .ht-item.up .ht-content,
+  .ht-item.down .ht-content {
+    bottom: auto;
+    top: auto;
+    margin: 0 0 0 1.5rem;
+  }
+  .ht-item.up:hover .ht-content,
+  .ht-item.down:hover .ht-content {
+    transform: translateX(5px);
+  }
+  .ht-item.up .ht-connector,
+  .ht-item.down .ht-connector {
+    display: none;
+  }
+}
+
 /* Stagger animation delay for child sections */
 .fade-in:nth-child(2) { transition-delay: 0.1s; }
 .fade-in:nth-child(3) { transition-delay: 0.2s; }
@@ -535,6 +751,13 @@ footer {
 .resume-section h1 {
   font-size: 2.2rem;
   margin-bottom: 0.75rem;
+}
+
+.resume-summary {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
 }
 
 /* ===== Section Titles with Icons ===== */
@@ -641,6 +864,11 @@ footer {
   align-items: flex-end;
   gap: 0.5rem;
   flex-shrink: 0;
+}
+
+.edu-meta.edu-meta-horizontal {
+  flex-direction: row;
+  align-items: center;
 }
 
 .edu-date {
@@ -898,23 +1126,44 @@ footer {
 }
 
 .project-card h3 {
-  margin: 0 0 0.5rem;
-  font-size: 1.1rem;
+  margin: 0 0 0.25rem 0;
+  font-size: 1.15rem;
   color: var(--heading);
 }
 
-.project-card p {
-  font-size: 0.875rem;
+.project-type {
+  font-size: 0.8rem;
   color: var(--text-muted);
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.project-card p {
+  color: var(--text);
+  font-size: 0.9rem;
   line-height: 1.5;
-  flex: 1;
-  margin: 0 0 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-meta-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.project-date.m-0 {
+  margin-top: 0;
+}
+
+.badge-sm {
+  font-size: 0.65rem;
 }
 
 .project-date {
   font-size: 0.75rem;
   color: var(--text-muted);
-  margin-top: auto;
 }
 
 /* ===== Tech Tags ===== */
