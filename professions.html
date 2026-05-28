@@ -5,10 +5,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Professions | Joshua Chau</title>
-  <meta name="description" content="Professions and Portfolio of Joshua Chau — Computer Engineering student at the University of Toronto with experience in software performance engineering and machine learning research." />
+  <link rel="icon" href="/pics/web-logo.png" type="image/png" />
+  <meta name="description"
+    content="Professions and Portfolio of Joshua Chau — Computer Engineering student at the University of Toronto with experience in software performance engineering and machine learning research." />
+  <meta property="og:title" content="Professions | Joshua Chau" />
+  <meta property="og:description" content="Professions and Portfolio of Joshua Chau — Computer Engineering student at the University of Toronto with experience in software performance engineering and machine learning research." />
+  <meta property="og:image" content="https://tsztungchau-jo.github.io/pics/web-logo.png" />
+  <meta property="og:url" content="https://tsztungchau-jo.github.io/professions.html" />
+  <meta property="og:type" content="website" />
   <script>
     // Apply saved theme immediately to prevent flash of wrong theme
-    (function() {
+    (function () {
       var theme = localStorage.getItem('theme')
         || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       document.documentElement.setAttribute('data-theme', theme);
@@ -49,19 +56,31 @@
         </p>
         <div class="resume-contact">
           <button type="button" class="contact-btn email-btn copy-email-btn" title="Copy Email">
-            <svg aria-hidden="true" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <svg aria-hidden="true" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+            </svg>
             <span class="email-text">Email</span>
           </button>
           <a href="https://github.com/TszTungChau-Jo" target="_blank" rel="noopener noreferrer" title="GitHub">
-            <svg aria-hidden="true" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+            <svg aria-hidden="true" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+            </svg>
             <span>GitHub</span>
           </a>
-          <a href="https://www.linkedin.com/in/tsz-tung-chau/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-            <svg aria-hidden="true" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <a href="https://www.linkedin.com/in/tsz-tung-chau/" target="_blank" rel="noopener noreferrer"
+            title="LinkedIn">
+            <svg aria-hidden="true" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+            </svg>
             <span>LinkedIn</span>
           </a>
           <a href="/docs/JoshuaTTC_resume.pdf" target="_blank" title="View Resume PDF">
-            <svg aria-hidden="true" width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+            <svg aria-hidden="true" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+            </svg>
             <span>View PDF</span>
           </a>
         </div>
@@ -70,7 +89,9 @@
       <!-- ===== Education ===== -->
       <section class="resume-section fade-in">
         <h2 class="section-title">
-          <svg aria-hidden="true" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
+          <svg aria-hidden="true" width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z" />
+          </svg>
           Education
         </h2>
         <div class="edu-card">
@@ -100,7 +121,10 @@
       <!-- ===== Professional Experience ===== -->
       <section class="resume-section fade-in">
         <h2 class="section-title">
-          <svg aria-hidden="true" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
+          <svg aria-hidden="true" width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z" />
+          </svg>
           Professional Experience
         </h2>
         <div class="timeline">
@@ -114,9 +138,11 @@
               <p class="timeline-company">Veeva Systems · Toronto, CA</p>
               <p class="timeline-date">May 2024 – Aug 2025</p>
               <ul class="timeline-bullets">
-                <li>Developed automated testing frameworks (<strong>Python, JMeter, Shell</strong>), reducing performance analysis time</li>
+                <li>Developed automated testing frameworks (<strong>Python, JMeter, Shell</strong>), reducing
+                  performance analysis time</li>
                 <li>Diagnose performance bottlenecks to improve the reliability of the cloud applications</li>
-                <li>Collaborated with developers and QAs across teams in an <strong>Agile environment (Scrum/Kanban)</strong> to streamline Jenkins pipeline performance testing</li>
+                <li>Collaborated with developers and QAs across teams in an <strong>Agile environment
+                    (Scrum/Kanban)</strong> to streamline Jenkins pipeline performance testing</li>
               </ul>
             </div>
           </div>
@@ -130,9 +156,12 @@
               <p class="timeline-company">Dynamic Optimization & Ops Mgmt Lab · Toronto, CA</p>
               <p class="timeline-date">May 2023 – Aug 2023</p>
               <ul class="timeline-bullets">
-                <li>Developed baseline ML models with <strong>Scikit-Learn</strong> to predict taxi-in/out times and runway assignments</li>
-                <li>Applied data preprocessing (<strong>NumPy, Seaborn</strong>) and exploratory analysis to improve prediction accuracy</li>
-                <li>Contributed to project progress through literature review, team collaboration, and problem-solving</li>
+                <li>Developed baseline ML models with <strong>Scikit-Learn</strong> to predict taxi-in/out times and
+                  runway assignments</li>
+                <li>Applied data preprocessing (<strong>NumPy, Seaborn</strong>) and exploratory analysis to improve
+                  prediction accuracy</li>
+                <li>Contributed to project progress through literature review, team collaboration, and problem-solving
+                </li>
               </ul>
             </div>
           </div>
@@ -143,7 +172,9 @@
       <!-- ===== Selected Engineering Projects ===== -->
       <section class="resume-section fade-in">
         <h2 class="section-title">
-          <svg aria-hidden="true" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+          <svg aria-hidden="true" width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
+          </svg>
           Selected Engineering Projects
         </h2>
         <div class="project-grid">
@@ -152,7 +183,8 @@
             <div class="project-icon">🗣️</div>
             <h3>VIVIDpdf — Text-to-Speech Web App</h3>
             <span class="project-type">Capstone Project</span>
-            <p>Developed an AI-driven TTS JavaScript web app for reading out loud PDF documents. Features selective playback, local reading history, custom pronunciation and skipping rules. Deployed on Cloudflare.</p>
+            <p>Developed an AI-driven TTS JavaScript web app for reading out loud PDF documents. Features selective
+              playback, local reading history, custom pronunciation and skipping rules. Deployed on Cloudflare.</p>
             <div class="tech-tags">
               <span class="tech-tag js">JavaScript</span>
               <span class="tech-tag data">AI/TTS</span>
@@ -168,7 +200,9 @@
             <div class="project-icon">✨</div>
             <h3>PixelNova — Productivity Management</h3>
             <span class="project-type">Course Project</span>
-            <p>Developed a Flask & PostgreSQL microservice using JWT for session management and user authentication. Architected inter-service communication via an API Gateway. Containerized and deployed using Docker and Render.</p>
+            <p>Developed a Flask & PostgreSQL microservice using JWT for session management and user authentication.
+              Architected inter-service communication via an API Gateway. Containerized and deployed using Docker and
+              Render.</p>
             <div class="tech-tags">
               <span class="tech-tag python">Flask</span>
               <span class="tech-tag data">PostgreSQL</span>
@@ -183,7 +217,8 @@
             <div class="project-icon">🔍</div>
             <h3>Web Search Engine</h3>
             <span class="project-type">Course Project</span>
-            <p>Developing a Python-based search engine implementing a web crawler, inverted index, and query processor. Designed document and Word ID mappings. Configured and managed AWS EC2 instances to host and test.</p>
+            <p>Developing a Python-based search engine implementing a web crawler, inverted index, and query processor.
+              Designed document and Word ID mappings. Configured and managed AWS EC2 instances to host and test.</p>
             <div class="tech-tags">
               <span class="tech-tag python">Python</span>
               <span class="tech-tag data">AWS EC2</span>
@@ -196,7 +231,8 @@
             <div class="project-icon">🏎️</div>
             <h3>Autonomous Route-Following Car</h3>
             <span class="project-type">Hackathon Project</span>
-            <p>Developed an autonomous robotic car using microcontroller components, motor drivers, and sensor arrays. Implemented control algorithms to detect course boundaries and navigate a predefined route.</p>
+            <p>Developed an autonomous robotic car using microcontroller components, motor drivers, and sensor arrays.
+              Implemented control algorithms to detect course boundaries and navigate a predefined route.</p>
             <div class="tech-tags">
               <span class="tech-tag c-lang">C/C++</span>
               <span class="tech-tag hw">Microcontrollers</span>
@@ -209,7 +245,8 @@
             <div class="project-icon">🎵</div>
             <h3>Smart Distance-Based Music Player</h3>
             <span class="project-type">Hackathon Project</span>
-            <p>Built an Arduino UNO and electronics prototype to detect moving objects and play context-specific music. C++-programmed microcontroller logic for distance measurements and dynamic sound output.</p>
+            <p>Built an Arduino UNO and electronics prototype to detect moving objects and play context-specific music.
+              C++-programmed microcontroller logic for distance measurements and dynamic sound output.</p>
             <div class="tech-tags">
               <span class="tech-tag c-lang">C++</span>
               <span class="tech-tag hw">Arduino UNO</span>
@@ -224,7 +261,10 @@
       <!-- ===== Leadership & Community Involvement ===== -->
       <section class="resume-section fade-in">
         <h2 class="section-title">
-          <svg aria-hidden="true" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+          <svg aria-hidden="true" width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
+          </svg>
           Leadership & Community
         </h2>
         <div class="project-grid">
@@ -232,31 +272,36 @@
           <div class="project-card">
             <div class="project-icon">🤝</div>
             <h3>Professional Mentorship</h3>
-            <p>Onboarded and mentored a new team member, facilitating their transition into team workflows, daily operations, and organizational culture.</p>
+            <p>Onboarded and mentored a new team member, facilitating their transition into team workflows, daily
+              operations, and organizational culture.</p>
           </div>
 
           <div class="project-card">
             <div class="project-icon">📚</div>
             <h3>Academic Collaboration</h3>
-            <p>Spearheaded peer study groups and curated shared digital resource repositories to enhance collaborative learning among classmates.</p>
+            <p>Spearheaded peer study groups and curated shared digital resource repositories to enhance collaborative
+              learning among classmates.</p>
           </div>
 
           <div class="project-card">
             <div class="project-icon">📢</div>
             <h3>Student Advocacy</h3>
-            <p>Led a successful initiative to modernize the University of Toronto's student identity verification process for new admissions.</p>
+            <p>Led a successful initiative to modernize the University of Toronto's student identity verification
+              process for new admissions.</p>
           </div>
 
           <div class="project-card">
             <div class="project-icon">🌍</div>
             <h3>International Student Support</h3>
-            <p>Provided cultural and academic orientation for incoming students, assisting with their transition to the Canadian educational environment.</p>
+            <p>Provided cultural and academic orientation for incoming students, assisting with their transition to the
+              Canadian educational environment.</p>
           </div>
 
           <div class="project-card">
             <div class="project-icon">💛</div>
             <h3>Community Youth Club (HK)</h3>
-            <p>Participate in fundraising campaigns and community service projects, including elder care visits and environmental conservation efforts.</p>
+            <p>Participate in fundraising campaigns and community service projects, including elder care visits and
+              environmental conservation efforts.</p>
           </div>
 
         </div>
@@ -265,7 +310,10 @@
       <!-- ===== Skills & Interests ===== -->
       <section class="resume-section fade-in">
         <h2 class="section-title">
-          <svg aria-hidden="true" width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z"/></svg>
+          <svg aria-hidden="true" width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M22.7 19l-9.1-9.1c.9-2.3.4-5-1.5-6.9-2-2-5-2.4-7.4-1.3L9 6 6 9 1.6 4.7C.4 7.1.9 10.1 2.9 12.1c1.9 1.9 4.6 2.4 6.9 1.5l9.1 9.1c.4.4 1 .4 1.4 0l2.3-2.3c.5-.4.5-1.1.1-1.4z" />
+          </svg>
           Skills & Interests
         </h2>
         <div class="skills-container">
@@ -334,22 +382,32 @@
     </main>
 
     <footer>
-      <a href="https://github.com/TszTungChau-Jo" target="_blank" rel="noopener noreferrer" title="View on GitHub" class="github-btn">
-        <svg aria-hidden="true" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="width: 24px; height: 24px;">
-          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path>
+      <a href="https://github.com/TszTungChau-Jo" target="_blank" rel="noopener noreferrer" title="View on GitHub"
+        class="github-btn">
+        <svg aria-hidden="true" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"
+          style="width: 24px; height: 24px;">
+          <path
+            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.43.372.823 1.102.823 2.222 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12">
+          </path>
         </svg>
       </a>
-      <a href="https://www.linkedin.com/in/tsz-tung-chau/" target="_blank" rel="noopener noreferrer" title="View on LinkedIn" class="linkedin-btn">
-        <svg aria-hidden="true" width="24" height="24" fill="currentColor" viewBox="0 0 24 24" style="width: 24px; height: 24px;">
-          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+      <a href="https://www.linkedin.com/in/tsz-tung-chau/" target="_blank" rel="noopener noreferrer"
+        title="View on LinkedIn" class="linkedin-btn">
+        <svg aria-hidden="true" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"
+          style="width: 24px; height: 24px;">
+          <path
+            d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
         </svg>
       </a>
     </footer>
   </div>
 
   <!-- Download Resume FAB -->
-  <a href="/docs/JoshuaTTC_resume.pdf" target="_blank" class="download-fab" title="View Resume PDF" aria-label="View Resume PDF">
-    <svg aria-hidden="true" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+  <a href="/docs/JoshuaTTC_resume.pdf" target="_blank" class="download-fab" title="View Resume PDF"
+    aria-label="View Resume PDF">
+    <svg aria-hidden="true" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z" />
+    </svg>
   </a>
 
 </body>

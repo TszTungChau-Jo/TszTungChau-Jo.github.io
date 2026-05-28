@@ -1,0 +1,65 @@
+/* ===== Theme Variables ===== */
+:root {
+  --bg: #f6f8fa;
+  --bg-glow: none;
+  --text: #111;
+  --text-muted: #475569;
+  --heading: #0f172a;
+  --heading-secondary: #1e293b;
+  --card-bg: white;
+  --card-shadow: rgba(0, 0, 0, 0.05);
+  --card-shadow-hover: rgba(0, 0, 0, 0.05);
+  --card-border: transparent;
+  --sidebar-bg: #111827;
+  --sidebar-text: #e2e8f0;
+  --sidebar-heading: #fff;
+  --sidebar-link: #cbd5e1;
+  --sidebar-link-hover-bg: rgba(255, 255, 255, 0.1);
+  --sidebar-link-hover: #60a5fa;
+  --sidebar-section: #64748b;
+  --sidebar-title-link: #94a3b8;
+  --sidebar-title-link-hover: #e2e8f0;
+  --sidebar-title-link-hover-bg: rgba(255, 255, 255, 0.05);
+  --toggle-bg: #1e293b;
+  --toggle-hover: #334155;
+  --toggle-active: #475569;
+  --backdrop-bg: rgba(0, 0, 0, 0.4);
+  --github-color: rgb(99, 102, 241);
+  --github-hover: rgb(79, 70, 229);
+  --linkedin-color: rgb(10, 102, 194);
+  --linkedin-hover: rgb(0, 65, 130);
+  --note-color: #475569;
+}
+
+[data-theme="dark"] {
+  --bg: #0d1117;
+  --bg-glow: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(30, 64, 130, 0.25) 0%, transparent 70%);
+  --text: #e6edf3;
+  --text-muted: #8b949e;
+  --heading: #e6edf3;
+  --heading-secondary: #c9d1d9;
+  --card-bg: #161b22;
+  --card-shadow: rgba(0, 0, 0, 0.3);
+  --card-shadow-hover: rgba(0, 0, 0, 0.4);
+  --card-border: rgba(48, 54, 61, 0.6);
+  --sidebar-bg: #010409;
+  --sidebar-text: #c9d1d9;
+  --sidebar-heading: #f0f6fc;
+  --sidebar-link: #8b949e;
+  --sidebar-link-hover-bg: rgba(255, 255, 255, 0.06);
+  --sidebar-link-hover: #58a6ff;
+  --sidebar-section: #484f58;
+  --sidebar-title-link: #8b949e;
+  --sidebar-title-link-hover: #c9d1d9;
+  --sidebar-title-link-hover-bg: rgba(255, 255, 255, 0.04);
+  --toggle-bg: #21262d;
+  --toggle-hover: #30363d;
+  --toggle-active: #484f58;
+  --backdrop-bg: rgba(0, 0, 0, 0.6);
+  --github-color: #a5b4fc;
+  --github-hover: #818cf8;
+  --linkedin-color: #58a6ff;
+  --linkedin-hover: #79c0ff;
+  --note-color: #8b949e;
+}
+
